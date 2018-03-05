@@ -1,24 +1,13 @@
-# Unity (Un)Installer Template
-Unity Installer allows 1 zip to work for multiple devices and root solutions. [More details in support thread](https://forum.xda-developers.com/apps/magisk/module-audio-modification-library-t3579612).
+# Magisk SELinux Manager
+A Magisk Module for managing SELinux
 
-## Compatibility
-* Android Jellybean+
-* Selinux enforcing
-* All root solutions (requires init.d support if not using magisk or supersu. Try [Init.d Injector](https://forum.xda-developers.com/android/software-hacking/mod-universal-init-d-injector-wip-t3692105))
+## Features
+  * Set SELinux Mode (Enforcing vs Permissive) at startup
 
-## Change Log
-### v1.3 - 2.25.2018
-* Fix seg faults on system installs
+## Dependencies
+  * Magisk v15.3+
+  * Android v4.3+ device
 
-### v1.2 - 2.16.2018
-* Fine tune prop logic
-* Update util_functions with magisk 15.4 stuff
-
-### v1.1 - 2.7.2018
-* Bootmode fixes
-
-### v1.0 - 2.5.2018
-* Initial release
-
-## Source Code
-* Module [GitHub](https://github.com/Zackptg5/Unity)
+## Special Thanks
+  * ahrion & Zackptg5 - Providing the Unity Installer (https://forum.xda-developers.com/android/software/module-audio-modification-library-t3579612) and Vol Key Input Code
+  * topjohnwu - Providing us with Magisk (https://forum.xda-developers.com/apps/magisk/official-magisk-v7-universal-systemless-t3473445)
