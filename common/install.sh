@@ -83,4 +83,4 @@ else
 fi
 
 ui_print "Writing SELinux Mode to startup script..."
-sed -i "'s/<SELINUX_MODE>/$SELINUX_MODE/g'" $INSTALLER/common/post-fs-data.sh
+sed -i "s/<SELINUX_MODE>/$SELINUX_MODE/g" $INSTALLER/common/post-fs-data.sh
