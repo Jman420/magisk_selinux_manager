@@ -1,13 +1,15 @@
-UNSELECTED_MODE_VALUE=-1
-SELINUX_MODE=$UNSELECTED_MODE_VALUE
-
-# Get mode from Zip Name
+UNSELECTED_MODE=-1
+SELINUX_MODE=$UNSELECTED_MODE
 case $(basename $ZIP) in
-  *permissive*|*Permissive*|*PERMISSIVE*) SELINUX_MODE=0;;
-  *enforc*|*Enforc*|*ENFORC*) SELINUX_MODE=1;;
+  *permissive*|*Permissive*|*PERMISSIVE*)
+    SELINUX_MODE=0
+    ;;
+  *enforc*|*Enforc*|*ENFORC*)
+    SELINUX_MODE=1
+    ;;
 esac
 
-### SECTION LIFTED FROM Viper4Android Magisk Module by ahrion & Zackptg5 (https://github.com/therealahrion/ViPER4Android-FX)
+# Keycheck binary by someone755 @Github, idea for code below by Zappo @xda-developers
 # Keycheck binary by someone755 @Github, idea for code below by Zappo @xda-developers
 chmod 755 $INSTALLER/common/keycheck
 
@@ -51,10 +53,8 @@ chooseportold() {
     abort "   Use name change method in TWRP"
   fi
 }
-### END SECTION LIFTED FROM Viper4Android Magisk Module by ahrion & Zackptg5 (https://github.com/therealahrion/ViPER4Android-FX)
 
-if [ $SELINUX_MODE -eq $UNSELECTED_MODE_VALUE ]; then
-### SECTION LIFTED FROM Viper4Android Magisk Module by ahrion & Zackptg5 (https://github.com/therealahrion/ViPER4Android-FX)
+if [ $SELINUX_MODE == $UNSELECTED_MODE ]; then
   if keytest; then
     FUNCTION=chooseport
   else
@@ -67,13 +67,20 @@ if [ $SELINUX_MODE -eq $UNSELECTED_MODE_VALUE ]; then
     ui_print "   Press Vol Down"
     $FUNCTION "DOWN"
   fi
-  ui_print " "
-### END SECTION LIFTED FROM Viper4Android Magisk Module by ahrion & Zackptg5 (https://github.com/therealahrion/ViPER4Android-FX)
-
-  ui_print "--- Select SELinux Mode ---"
-  ui_print "  Vol+ = Permissive"
-  ui_print "  Vol- = Enforcing"
-  SELINUX_MODE = $FUNCTION
   
-  ui_print "Writing SELinux Mode to startup script..."
-  sed -ri "s/<SELINUX_MODE>/$SELINUX_MODE/g" $INSTALLER/common/post-fs-data.sh
+  ui_print "---Select SELinux Mode---"
+  ui_print "  Vol+ = Enforcing"
+  ui_print "  Vol- = Permissive"
+  if $FUNCTION; then
+    SELINUX_MODE=1
+    ui_print "SELinux Enforcing Mode selected."
+  else
+    SELINUX_MODE=0
+    ui_print "SELinux Permissive Mode selected."
+  fi
+else
+  ui_print "SELinux Mode specified in filename."
+fi
+
+ui_print "Writing SELinux Mode to startup script..."
+sed -i "'s/<SELINUX_MODE>/$SELINUX_MODE/g'" $INSTALLER/common/post-fs-data.sh
