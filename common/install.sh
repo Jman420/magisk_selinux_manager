@@ -1,6 +1,8 @@
 UNSELECTED_MODE=-1
 SELINUX_MODE=$UNSELECTED_MODE
-case $(basename $ZIP) in
+
+$ZIP_FILE = $(basename $ZIP)
+case $ZIP_FILE in
   *permissive*|*Permissive*|*PERMISSIVE*)
     SELINUX_MODE=0
     ;;
@@ -9,7 +11,6 @@ case $(basename $ZIP) in
     ;;
 esac
 
-# Keycheck binary by someone755 @Github, idea for code below by Zappo @xda-developers
 # Keycheck binary by someone755 @Github, idea for code below by Zappo @xda-developers
 chmod 755 $INSTALLER/common/keycheck
 
@@ -79,7 +80,7 @@ if [ $SELINUX_MODE == $UNSELECTED_MODE ]; then
     ui_print "SELinux Permissive Mode selected."
   fi
 else
-  ui_print "SELinux Mode specified in filename."
+  ui_print "SELinux Mode specified in filename : $ZIP_FILE"
 fi
 
 ui_print "Writing SELinux Mode to startup script..."
