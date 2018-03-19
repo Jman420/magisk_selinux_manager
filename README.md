@@ -14,3 +14,11 @@ See https://forum.xda-developers.com/apps/magisk/module-magisk-selinux-manager-t
 ## Special Thanks
   * ahrion & Zackptg5 - Providing the Unity Installer (https://forum.xda-developers.com/android/software/module-audio-modification-library-t3579612) and Vol Key Input Code
   * topjohnwu - Providing us with Magisk (https://forum.xda-developers.com/apps/magisk/official-magisk-v7-universal-systemless-t3473445)
+
+## Change Log
+  * v1.0.1
+    - Update Unity Installer Files & Scripts
+
+  * v1.0.0
+    - Initial Release
+    - Select SELinux Mode set at Startup
