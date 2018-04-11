@@ -11,17 +11,18 @@ case $ZIP_FILE in
     ;;
 esac
 
-# Keycheck binary by someone755 @Github, idea for code below by Zappo @xda-developers
-chmod 755 $INSTALLER/common/keycheck
+# Change this path to wherever the keycheck binary is located in your installer
+KEYCHECK=$INSTALLER/keycheck
+chmod 755 $KEYCHECK
 
 keytest() {
   ui_print "- Vol Key Test -"
   ui_print "   Press Vol Up:"
   (/system/bin/getevent -lc 1 2>&1 | /system/bin/grep VOLUME | /system/bin/grep " DOWN" > $INSTALLER/events) || return 1
   return 0
-}
+}   
 
-chooseport() {
+choose() {
   #note from chainfire @xda-developers: getevent behaves weird when piped, and busybox grep likes that even less than toolbox/toybox grep
   while (true); do
     /system/bin/getevent -lc 1 2>&1 | /system/bin/grep VOLUME | /system/bin/grep " DOWN" > $INSTALLER/events
@@ -36,10 +37,10 @@ chooseport() {
   fi
 }
 
-chooseportold() {
+chooseold() {
   # Calling it first time detects previous input. Calling it second time will do what we want
-  $INSTALLER/common/keycheck
-  $INSTALLER/common/keycheck
+  $KEYCHECK
+  $KEYCHECK
   SEL=$?
   if [ "$1" == "UP" ]; then
     UP=$SEL
@@ -57,9 +58,9 @@ chooseportold() {
 
 if [ $SELINUX_MODE == $UNSELECTED_MODE ]; then
   if keytest; then
-    FUNCTION=chooseport
+    FUNCTION=choose
   else
-    FUNCTION=chooseportold
+    FUNCTION=chooseold
     ui_print "   ! Legacy device detected! Using old keycheck method"
     ui_print " "
     ui_print "- Vol Key Programming -"
@@ -69,6 +70,7 @@ if [ $SELINUX_MODE == $UNSELECTED_MODE ]; then
     $FUNCTION "DOWN"
   fi
   
+  ui_print " "
   ui_print "---Select SELinux Mode---"
   ui_print "  Vol+ = Enforcing"
   ui_print "  Vol- = Permissive"
