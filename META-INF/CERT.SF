@@ -1,0 +1,49 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest: iBtnYMwSGR0C4yl+bVT1OS+qiaM=
+Created-By: 1.0 (Android SignApk)
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest-Manifest: pVUJ9D5th6d2sD8aeNp5zhiBUcs=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest-Manifest: oAg6qSZIEZ3905gxKVgXhls3KgM=
+
+Name: common/keycheck
+SHA1-Digest-Manifest: Jp1pOUZ/v0L0w7+7ioBRP17sgsI=
+
+Name: common/system.prop
+SHA1-Digest-Manifest: HbzvC3Tyik76s7nzWE6amQuJyXg=
+
+Name: common/unityfiles/util_functions.sh
+SHA1-Digest-Manifest: H9NJDzhAJBpdRNfY+1d4Cxx1JK8=
+
+Name: common/service.sh
+SHA1-Digest-Manifest: Ryw8cxDa46xEeTL2v/eeeJ1QKB4=
+
+Name: config.sh
+SHA1-Digest-Manifest: XPKaySfJ/Fy3VlylkLO8diUFJqg=
+
+Name: README.md
+SHA1-Digest-Manifest: nQQMm4fws8DZ1eEt+caXrGaNGRo=
+
+Name: common/unityfiles/addon.sh
+SHA1-Digest-Manifest: RA52x5oJPA6nocrEK1pvAskrgpc=
+
+Name: module.prop
+SHA1-Digest-Manifest: by2EnuMzMXCfDKcBjW2cmQUcIGM=
+
+Name: common/unityfiles/modid.sh
+SHA1-Digest-Manifest: bnNlh+MP55vhyaFgyornPf7OCOI=
+
+Name: common/post-fs-data.sh
+SHA1-Digest-Manifest: GYTlQeyUxXm0e0Ho6jZ8VYflEFQ=
+
+Name: common/uninstall.sh
+SHA1-Digest-Manifest: fJUXGWYIa3IaJ1wLpqTu6JvwCUA=
+
+Name: common/install.sh
+SHA1-Digest-Manifest: bfPaQwKuQClLQCgPfADHI18rhwM=
+
+Name: LICENSE
+SHA1-Digest-Manifest: LofuXu6sxSyg7H7NCRutoRq2Zwg=
+
