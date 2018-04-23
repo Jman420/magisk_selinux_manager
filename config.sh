@@ -58,7 +58,7 @@ print_modname() {
   ui_print "    *******************************************"
   ui_print "    *         Magisk SELinux Manager          *"
   ui_print "    *******************************************"
-  ui_print "    *  version : 1.0.2                        *"
+  ui_print "    *  version : 1.0.3                        *"
   ui_print "    *  author: jman420                        *"
   ui_print "    *******************************************"
   ui_print " "
