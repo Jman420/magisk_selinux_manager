@@ -1,7 +1,7 @@
 id=magisk_selinux_manager
 name=Magisk SELinux Manager
-version=v1.0.4
-versionCode=5
+version=v1.0.5
+versionCode=6
 author=jman420
 description=Magisk Module providing basic SELinux Managment functionality.
 support=https://github.com/Jman420/magisk_selinux_manager

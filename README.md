@@ -17,6 +17,9 @@ See https://forum.xda-developers.com/apps/magisk/module-magisk-selinux-manager-t
   * topjohnwu - Providing us with Magisk (https://forum.xda-developers.com/apps/magisk/official-magisk-v7-universal-systemless-t3473445)
 
 ## Change Log
+  * v1.0.5
+    - Update Unity Installer Files & Scripts (v1.5.4)
+    
   * v1.0.4
     - Update Unity Installer Files & Scripts (v1.5.3)
 
