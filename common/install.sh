@@ -1,7 +1,7 @@
 UNSELECTED_MODE=-1
 SELINUX_MODE=$UNSELECTED_MODE
 
-$ZIP_FILE = $(basename $ZIP)
+ZIP_FILE=$(basename $ZIP)
 case $ZIP_FILE in
   *permissive*|*Permissive*|*PERMISSIVE*)
     SELINUX_MODE=0
